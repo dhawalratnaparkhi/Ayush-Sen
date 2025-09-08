@@ -46,3 +46,19 @@ sections.forEach(section => {
   observer.observe(section);
 });
 }
+// Theme toggle
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    themeToggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
+    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+  });
+
+  // Load saved theme
+  const saved = localStorage.getItem("theme");
+  if (saved === "light") {
+    document.body.classList.add("light");
+    themeToggle.textContent = "☀️";
+  }
+}
