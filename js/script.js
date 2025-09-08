@@ -50,11 +50,17 @@ sections.forEach(section => {
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    themeToggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
-    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    themeToggle.textContent = next === "light" ? "☀️" : "🌙";
   });
 
+  // Update icon on load
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  themeToggle.textContent = currentTheme === "light" ? "☀️" : "🌙";
+}
   // Load saved theme
   const saved = localStorage.getItem("theme");
   if (saved === "light") {
