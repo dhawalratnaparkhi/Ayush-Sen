@@ -14,7 +14,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Light Mode Variables */
+/* Light theme override */
 html[data-theme="light"] {
   --bg-gradient: linear-gradient(135deg, #f1f5f9, #e2e8f0);
   --card-bg: rgba(255, 255, 255, 0.6);
@@ -24,9 +24,13 @@ html[data-theme="light"] {
   --shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  position: relative;
   margin: 0;
+  position: relative;
   background: var(--bg-gradient);
   background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03) 0%, transparent 50%),
                     radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
@@ -34,7 +38,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* Layout */
@@ -213,10 +216,10 @@ body {
 .animated-grid {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,<svg ...>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='none' stroke='%235daeff' stroke-width='0.5'/></svg>");
   opacity: 0.2;
   pointer-events: none;
-  z-index: -1; /* <--- was 0 before, push behind everything */
+  z-index: 0; /* behind content but above body background */
   animation: moveGrid 60s linear infinite;
 }
 
