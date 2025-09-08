@@ -10,12 +10,13 @@
   <meta property="og:description" content="Back End Engineer specializing in Java, Spring Boot, Microservices and REST APIs." />
   <meta property="og:type" content="website" />
   <script>
-  (function() {
-    const theme = localStorage.getItem("theme");
-    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const active = theme ? theme : prefers;
-    document.body.classList.add(active);
-    </script>
+(function() {
+  const stored = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (prefersDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+  </script>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
