@@ -9,6 +9,13 @@
   <meta property="og:title" content="Ayush Sen — Back End Engineer" />
   <meta property="og:description" content="Back End Engineer specializing in Java, Spring Boot, Microservices and REST APIs." />
   <meta property="og:type" content="website" />
+  <script>
+  (function() {
+    const theme = localStorage.getItem("theme");
+    const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const active = theme ? theme : prefers;
+    document.body.classList.add(active);
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
