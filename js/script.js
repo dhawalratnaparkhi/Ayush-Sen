@@ -62,9 +62,3 @@ if (themeToggle) {
   themeToggle.textContent = currentTheme === "light" ? "☀️" : "🌙";
 }
   // Load saved theme
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") {
-    document.body.classList.add("light");
-    themeToggle.textContent = "☀️";
-  }
-}
