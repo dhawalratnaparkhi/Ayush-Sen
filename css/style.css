@@ -1,0 +1,98 @@
+:root{
+  --bg:#0f1724; /* darker base used in gradient */
+  --accentA:#0f4c81;
+  --accentB:#0e9aa7;
+  --muted:#6b7280;
+  --surface:#0b1220;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#071023);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+/* layout */
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header-grid{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand .name{margin:0;font-size:1.125rem;letter-spacing:0.2px}
+.brand .tagline{margin:2px 0 0;color:var(--muted);font-size:0.95rem}
+
+/* nav */
+.nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+.btn-outline{padding:8px 12px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:var(--muted);text-decoration:none}
+
+/* hero */
+.hero{padding:44px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center}
+.hero h2{font-size:2rem;margin:0 0 8px}
+.lead{color:#dbeafe;font-size:1.05rem;margin:0 0 12px}
+.meta{color:var(--muted);font-size:0.95rem;margin-bottom:16px}
+.hero-ctas a{display:inline-block;margin-right:10px;text-decoration:none}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accentA),var(--accentB));
+  border:none;padding:10px 16px;border-radius:12px;color:white;font-weight:700;
+  text-decoration:none;box-shadow:0 6px 20px rgba(14,154,167,0.12);
+}
+.btn-ghost{background:transparent;color:var(--muted);padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* photo ring */
+.photo-ring{
+  width:250px;height:250px;border-radius:50%;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
+  display:flex;align-items:center;justify-content:center;padding:12px;
+  box-shadow: inset 0 -20px 40px rgba(0,0,0,0.35), 0 10px 30px rgba(0,0,0,0.5);
+}
+.photo-ring img{
+  width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid rgba(255,255,255,0.03)
+}
+
+/* sections */
+.section{padding:36px 0}
+.section-title{font-size:1.15rem;margin:0 0 8px}
+.section-intro{color:var(--muted);margin-bottom:14px}
+.about-meta{display:flex;gap:20px;color:var(--muted);flex-wrap:wrap}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;list-style:none;padding:0;margin:14px 0}
+.skill-grid li{background:var(--glass);padding:10px;border-radius:10px;color:#e7f4ff;font-weight:600;text-align:center}
+
+/* timeline */
+.timeline{display:flex;flex-direction:column;gap:18px}
+.timeline-item{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px;display:flex;gap:18px;align-items:flex-start}
+.timeline-meta{min-width:220px}
+.timeline-meta h4{margin:0 0 4px}
+.timeline-meta time{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:6px}
+.timeline-body{color:#dbeafe}
+
+/* projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.project{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.contact-form label{display:block;margin-top:8px;font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit}
+.contact-info{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px}
+.small{color:var(--muted);font-size:0.92rem;margin-top:10px}
+
+/* footer */
+.site-footer{padding:28px 0;color:var(--muted);text-align:center;background:linear-gradient(180deg,transparent rgba(0,0,0,0.05));margin-top:28px}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;border-radius:12px}
+  .contact-grid{grid-template-columns:1fr}
+  .header-grid{flex-direction:column;align-items:flex-start;gap:8px}
+  .nav a{margin-left:8px}
+}
