@@ -15,4 +15,34 @@ if (form) {
       submitBtn.textContent = 'Send';
     }, 4000);
   });
+  // Typing effect for hero heading
+const heroHeading = document.querySelector(".hero-content h2");
+if (heroHeading) {
+  const text = heroHeading.textContent;
+  heroHeading.textContent = "";
+  let i = 0;
+  const typing = setInterval(() => {
+    heroHeading.textContent += text.charAt(i);
+    i++;
+    if (i > text.length) clearInterval(typing);
+  }, 80);
+}
+
+// Scroll reveal for sections
+const sections = document.querySelectorAll(".section");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = "translateY(30px)";
+  section.style.transition = "all 0.6s ease-out";
+  observer.observe(section);
+});
 }
