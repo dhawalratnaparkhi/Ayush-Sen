@@ -57,7 +57,7 @@ if (themeToggle) {
     themeToggle.textContent = next === "light" ? "☀️" : "🌙";
   });
 
-  // Update icon on load
+  // Update button icon on page load
   const currentTheme = document.documentElement.getAttribute("data-theme");
   themeToggle.textContent = currentTheme === "light" ? "☀️" : "🌙";
 }
