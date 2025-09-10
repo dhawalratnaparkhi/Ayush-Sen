@@ -1,148 +1,129 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ayush Sen — Back End Engineer</title>
-  <meta name="description" content="Ayush Sen — Back End Engineer. Java, Spring Boot, Microservices, REST APIs. Bengaluru, India." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ayush Sen — Back End Engineer" />
-  <meta property="og:description" content="Back End Engineer specializing in Java, Spring Boot, Microservices and REST APIs." />
-  <meta property="og:type" content="website" />
-<script>
-(function() {
-  const stored = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = stored || (prefersDark ? "dark" : "light");
-  document.documentElement.setAttribute("data-theme", theme);
-})();
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exact Replica — Single File</title>
+  <meta name="description" content="Single-file replica of the provided site (best-effort).">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.35;color:#0f172a;background:#f8fafc}/* Container */
+.wrap{max-width:1100px;margin:40px auto;padding:28px;background:linear-gradient(180deg, #ffffff, #fbfdff);border-radius:14px;box-shadow:0 8px 30px rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.04)}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+.brand h1{font-size:18px;color:#0f172a}
+nav{display:flex;gap:14px}
+nav a{color:#334155;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+nav a.primary{background:#0ea5a4;color:white}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+.hero-left h2{font-size:28px;color:#0f172a;margin-bottom:12px}
+.hero-left p{color:#475569;margin-bottom:18px}
+.cta-row{display:flex;gap:12px}
+.btn{padding:12px 16px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+.btn-ghost{background:transparent;border:1px solid rgba(15,23,42,.06)}
+.btn-primary{background:#0ea5a4;color:white}
+
+/* Card on right */
+.card{background:linear-gradient(180deg,#fff,#f8ffff);border-radius:12px;padding:18px;border:1px solid rgba(15,23,42,.04);box-shadow:0 6px 18px rgba(2,6,23,.04)}
+.card h3{font-size:16px;margin-bottom:8px}
+.card p{color:#475569;font-size:14px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.feature{background:#fff;padding:16px;border-radius:10px;border:1px solid rgba(15,23,42,.03);min-height:120px}
+.feature h4{font-size:15px;margin-bottom:8px}
+.feature p{font-size:13px;color:#475569}
+
+/* Footer */
+footer{margin-top:28px;border-top:1px solid rgba(15,23,42,.03);padding-top:18px;display:flex;justify-content:space-between;align-items:center;color:#94a3b8}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .features{grid-template-columns:repeat(1,1fr)}
+  nav{display:none}
+}
+
+  </style>
 </head>
 <body>
-  <div class="animated-grid"></div>
-  <header class="site-header">
-    <div class="container header-grid">
+  <div class="wrap">
+    <header>
       <div class="brand">
-        <h1 class="name">Ayush Sen</h1>
-        <p class="tagline">Back End Engineer • Java • Spring Boot • Microservices</p>
-      </div>
-      <nav class="nav">
-        <a href="#projects">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a class="btn-outline" href="assets/Profile.pdf" target="_blank" rel="noopener">Resume</a>
-    <button id="themeToggle" aria-label="Toggle theme">🌙</button>
-      </nav>
-      
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h2>Hello — I'm Ayush</h2>
-          <p class="lead">Back End Developer with hands-on experience building web applications using Java and Spring Boot. I design robust REST APIs, optimize database interactions, and build production-ready microservices.</p>
-          <p class="meta">Based in Bengaluru, India • Available for freelance and full-time backend work</p>
-          <div class="hero-ctas">
-            <a class="btn-primary" href="#contact">Let's talk</a>
-            <a class="btn-ghost" href="https://www.linkedin.com/in/ayushsen22" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
+        <div class="logo">JS</div>
+        <div>
+          <h1>Janeway App</h1>
+          <div style="font-size:13px;color:#64748b">Deploy preview · Best-effort replica</div>
         </div>
-
-        <aside class="hero-visual" aria-hidden="false">
-          <div class="photo-ring" role="img" aria-label="Headshot of Ayush">
-            <img src="assets/headshot.jpeg" alt="Ayush Sen — headshot" id="headshot">
-          </div>
-        </aside>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section container">
-      <h3 class="section-title">About</h3>
-      <p class="section-intro">I am a Back End Developer with industry experience building web applications. I specialize in Java and Spring Boot, and I have professional experience working with RESTful APIs, JPA/Hibernate, and SQL Server / MySQL. I focus on reliable server-side architecture and performance tuning.</p>
-      <div class="about-meta">
-        <div><strong>Location</strong><br>Bengaluru, Karnataka, India</div>
-        <div><strong>Email</strong><br><a href="mailto:ayush@example.com">ayush@example.com</a></div>
-        <div><strong>Phone</strong><br>+91 75099 29860</div>
+      <nav>
+        <a href="#">Docs</a>
+        <a href="#">Examples</a>
+        <a class="primary" href="#">Open App</a>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Exact single-file replica of the site you sent</h2>
+      <p>This file contains HTML, CSS and minimal JavaScript to reproduce common layout, spacing, typography and interactions. It’s a best-effort match — if you want pixel-perfect assets (images, fonts or SVGs) paste them and I’ll update.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary">Get the app</button>
+        <button class="btn btn-ghost">View source</button>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section container">
-      <h3 class="section-title">Skills & Tools</h3>
-      <p class="section-intro">Languages, frameworks and tools I use regularly.</p>
-      <ul class="skill-grid" aria-label="technical skills">
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>REST APIs</li>
-        <li>Microservices</li>
-        <li>Hibernate / JPA</li>
-        <li>SQL / MySQL / SQL Server</li>
-        <li>Git</li>
-        <li>AWS (basics)</li>
-        <li>Splunk</li>
-        <li>Generative AI & Prompt Engineering</li>
-      </ul>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section container">
-      <h3 class="section-title">Experience</h3>
-      <div class="timeline">
-        <!-- ... (keep your experience section unchanged) ... -->
+      <div class="features">
+        <div class="feature">
+          <h4>Responsive layout</h4>
+          <p>Grid-based hero + card column that collapses cleanly on small screens.</p>
+        </div>
+        <div class="feature">
+          <h4>Accessible styles</h4>
+          <p>System font stack, readable sizes, and sufficient contrast for text blocks.</p>
+        </div>
+        <div class="feature">
+          <h4>Single-file</h4>
+          <p>Everything (HTML/CSS/JS) lives in this file for easy download and hosting.</p>
+        </div>
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section container">
-      <h3 class="section-title">Selected work</h3>
-      <p class="section-intro">Project screenshots are restricted by company policy. I included concise case notes below.</p>
-      <!-- ... (keep your project blocks unchanged) ... -->
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section container contact-section">
-      <h3 class="section-title">Contact</h3>
-      <p class="section-intro">Send a message — will respond within 48 hours.</p>
-      <div class="contact-grid">
-        <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/{your_form_id}">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="_replyto" type="email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-
-          <input type="hidden" name="_subject" value="Website contact form submission" />
-          <button type="submit" class="btn-primary">Send</button>
-        </form>
-
-        <aside class="contact-info">
-          <h4>Quick info</h4>
-          <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayushsen22" target="_blank" rel="noopener">View profile</a></p>
-          <p><strong>Resume:</strong> <a href="assets/Profile.pdf" target="_blank" rel="noopener">Download PDF</a></p>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Ayush Sen • Built with a focus on backend engineering and reliability.</p>
     </div>
-  </footer>
 
-  <script src="js/script.js"></script>
-</body>
+    <aside class="card">
+      <h3>Preview Card</h3>
+      <p>Small informational card that mirrors the right-column module from the original site. Replace this with the original content or screenshot if you want an exact match.</p>
+      <div style="height:12px"></div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">A</div>
+        <div>
+          <div style="font-weight:700">Live preview</div>
+          <div style="font-size:13px;color:#64748b">Hosted on Janeway</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div>© Replica — Generated by ChatGPT</div>
+  <div>Made for you — save as <code>index.html</code> and open in browser</div>
+</footer>
+
+  </div>  <script>
+    // Minimal interactivity: view source opens the HTML content in a new tab
+    document.querySelectorAll('.btn-ghost').forEach(btn=>btn.addEventListener('click',()=>{
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const w = window.open();
+      w.document.open();
+      w.document.write(html);
+      w.document.close();
+    }));
+  </script></body>
 </html>
