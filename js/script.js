@@ -15,7 +15,24 @@ if (form) {
       submitBtn.textContent = 'Send';
     }, 4000);
   });
-  // Typing effect for hero heading
+// year stamp
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Contact form UX (runs only if form exists)
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    }, 4000);
+  });
+}
+
+// Typing effect
 const heroHeading = document.querySelector(".hero-content h2");
 if (heroHeading) {
   const text = heroHeading.textContent;
@@ -28,24 +45,26 @@ if (heroHeading) {
   }, 80);
 }
 
-// Scroll reveal for sections
+// Scroll reveal
 const sections = document.querySelectorAll(".section");
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, { threshold: 0.2 });
+if (sections.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.2 });
 
-sections.forEach(section => {
-  section.style.opacity = 0;
-  section.style.transform = "translateY(30px)";
-  section.style.transition = "all 0.6s ease-out";
-  observer.observe(section);
-});
+  sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "all 0.6s ease-out";
+    observer.observe(section);
+  });
 }
+
 // Theme toggle
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
@@ -57,8 +76,7 @@ if (themeToggle) {
     themeToggle.textContent = next === "light" ? "☀️" : "🌙";
   });
 
-  // Update button icon on page load
+  // Set the icon based on current theme on load
   const currentTheme = document.documentElement.getAttribute("data-theme");
   themeToggle.textContent = currentTheme === "light" ? "☀️" : "🌙";
 }
-  // Load saved theme
