@@ -2,128 +2,265 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Exact Replica — Single File</title>
-  <meta name="description" content="Single-file replica of the provided site (best-effort).">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ayush Sen — Portfolio (Replica)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
-    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f6f4fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent-start:#9b5cff;
+      --accent-end:#f59e0b;
+      --primary:#7c3aed;
+      --btn-grad: linear-gradient(90deg,var(--primary),#8b5cf6);
+      --radius:18px;
+      --soft-shadow: 0 8px 30px rgba(2,6,23,.06);
+    }
+    *{box-sizing:border-box}
     html,body{height:100%}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.35;color:#0f172a;background:#f8fafc}/* Container */
-.wrap{max-width:1100px;margin:40px auto;padding:28px;background:linear-gradient(180deg, #ffffff, #fbfdff);border-radius:14px;box-shadow:0 8px 30px rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.04)}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:0;background:linear-gradient(180deg,#f3f1f7 0%, #f8f8fb 100%);color:#0f172a;-webkit-font-smoothing:antialiased}/* NAV */
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.8);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,.04)}
+.nav{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+.nav-left{display:flex;align-items:center;gap:10px}
+.logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+nav a{margin:0 10px;color:#374151;text-decoration:none;padding:10px 8px;border-radius:8px;font-weight:600}
+nav a.active{color:var(--primary)}
 
-/* Header */
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
-.brand{display:flex;gap:14px;align-items:center}
-.logo{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
-.brand h1{font-size:18px;color:#0f172a}
-nav{display:flex;gap:14px}
-nav a{color:#334155;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-nav a.primary{background:#0ea5a4;color:white}
+/* HERO */
+.hero{max-width:980px;margin:28px auto;padding:36px 18px;background:linear-gradient(180deg, rgba(124,58,237,0.04), rgba(245,158,11,0.02));border-radius:20px;text-align:center}
+.avatar{width:96px;height:96px;border-radius:50%;display:inline-grid;place-items:center;margin:8px auto;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));color:#fff;font-weight:700;font-size:34px}
+h1{font-size:44px;margin:14px 0 6px;line-height:1}
+.name{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.subtitle{color:var(--muted);max-width:760px;margin:14px auto 18px;font-size:16px}
+.location{display:flex;gap:8px;justify-content:center;align-items:center;color:var(--muted);margin-bottom:18px}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
-.hero-left h2{font-size:28px;color:#0f172a;margin-bottom:12px}
-.hero-left p{color:#475569;margin-bottom:18px}
-.cta-row{display:flex;gap:12px}
-.btn{padding:12px 16px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
-.btn-ghost{background:transparent;border:1px solid rgba(15,23,42,.06)}
-.btn-primary{background:#0ea5a4;color:white}
+.hero-actions{display:flex;gap:14px;justify-content:center;margin-bottom:22px}
+.btn{padding:12px 28px;border-radius:999px;border:none;font-weight:700;cursor:pointer}
+.btn-primary{background:var(--btn-grad);color:#fff;box-shadow:0 8px 30px rgba(124,58,237,.15)}
+.btn-ghost{background:transparent;border:1px solid rgba(15,23,42,.06);color:#374151}
 
-/* Card on right */
-.card{background:linear-gradient(180deg,#fff,#f8ffff);border-radius:12px;padding:18px;border:1px solid rgba(15,23,42,.04);box-shadow:0 6px 18px rgba(2,6,23,.04)}
-.card h3{font-size:16px;margin-bottom:8px}
-.card p{color:#475569;font-size:14px}
+.social{display:flex;gap:10px;justify-content:center;margin-top:8px}
+.social a{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;border:1px solid rgba(2,6,23,.04);text-decoration:none;color:#111}
 
-/* Features */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-.feature{background:#fff;padding:16px;border-radius:10px;border:1px solid rgba(15,23,42,.03);min-height:120px}
-.feature h4{font-size:15px;margin-bottom:8px}
-.feature p{font-size:13px;color:#475569}
+/* Sections */
+section{max-width:980px;margin:40px auto;padding:0 18px}
+.section-title{font-size:34px;text-align:center;margin-bottom:18px}
+.section-sub{color:var(--muted);text-align:center;margin-bottom:24px}
 
-/* Footer */
-footer{margin-top:28px;border-top:1px solid rgba(15,23,42,.03);padding-top:18px;display:flex;justify-content:space-between;align-items:center;color:#94a3b8}
+/* About cards */
+.about-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--soft-shadow);border:1px solid rgba(15,23,42,.04)}
+.info-row{display:flex;flex-direction:column;gap:12px}
+.meta{display:flex;gap:12px;align-items:center;color:var(--muted)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:1fr;gap:12px}
+.skill{display:flex;align-items:center;justify-content:space-between;padding:14px;border-radius:12px;background:white;border:1px solid rgba(15,23,42,.03)}
+.skill-left{display:flex;gap:12px;align-items:center}
+.skill-icon{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;font-weight:700}
+.progress{height:8px;background:#f1f2f4;border-radius:999px;overflow:hidden;margin-top:10px}
+.progress > i{display:block;height:100%;width:60%;background:linear-gradient(90deg,#ffd28a,#b57cff)}
+
+/* Experience vertical timeline */
+.timeline{display:flex;flex-direction:column;gap:18px}
+.exp-card{position:relative;padding-left:28px}
+.exp-card:before{content:'';position:absolute;left:8px;top:6px;width:4px;height:100%;background:linear-gradient(180deg,var(--primary),#f59e0b);border-radius:4px}
+
+/* Work cards */
+.work-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:18px}
+.work-item{border-radius:12px;padding:18px;background:linear-gradient(180deg,rgba(124,58,237,.03),rgba(245,158,11,.01));border:1px solid rgba(15,23,42,.03)}
+
+/* Contact form */
+.contact-wrap{display:flex;flex-direction:column;gap:20px;align-items:center}
+form{width:100%;max-width:520px}
+.field{display:flex;flex-direction:column;margin-bottom:12px}
+label{font-weight:700;margin-bottom:8px}
+input,textarea{padding:14px;border-radius:12px;border:1px solid rgba(15,23,42,.06);background:#fff;resize:none}
+textarea{min-height:120px}
+.send{display:flex;justify-content:center}
+
+footer{padding:28px 18px;text-align:center;color:var(--muted)}
 
 /* Responsive */
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr;}
-  .features{grid-template-columns:repeat(1,1fr)}
-  nav{display:none}
+@media(min-width:900px){
+  .hero{display:block}
+  h1{font-size:56px}
+  .about-grid{grid-template-columns:1fr 360px}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
 }
 
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">JS</div>
-        <div>
-          <h1>Janeway App</h1>
-          <div style="font-size:13px;color:#64748b">Deploy preview · Best-effort replica</div>
-        </div>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo">AS</div>
+        <nav>
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <nav>
-        <a href="#">Docs</a>
-        <a href="#">Examples</a>
-        <a class="primary" href="#">Open App</a>
-      </nav>
-    </header><main>
-  <section class="hero">
-    <div class="hero-left">
-      <h2>Exact single-file replica of the site you sent</h2>
-      <p>This file contains HTML, CSS and minimal JavaScript to reproduce common layout, spacing, typography and interactions. It’s a best-effort match — if you want pixel-perfect assets (images, fonts or SVGs) paste them and I’ll update.</p>
-      <div class="cta-row">
-        <button class="btn btn-primary">Get the app</button>
-        <button class="btn btn-ghost">View source</button>
+      <div>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
       </div>
+    </div>
+  </header>  <main>
+    <section id="home" class="hero">
+      <div class="avatar">A</div>
+      <h1>Hello — I'm <span class="name">Ayush</span></h1>
+      <p class="subtitle">Back End Developer with hands-on experience building web applications using <strong style="color:var(--primary)">Java</strong> and <strong style="color:var(--primary)">Spring Boot</strong>. I design robust REST APIs, optimize database interactions, and build production-ready microservices.</p>
+      <div class="location">📍 Bengaluru, India</div><div class="hero-actions">
+    <button class="btn btn-primary">Let's talk</button>
+    <a class="btn btn-ghost" href="#contact">LinkedIn</a>
+  </div>
+</section>
 
-      <div class="features">
-        <div class="feature">
-          <h4>Responsive layout</h4>
-          <p>Grid-based hero + card column that collapses cleanly on small screens.</p>
-        </div>
-        <div class="feature">
-          <h4>Accessible styles</h4>
-          <p>System font stack, readable sizes, and sufficient contrast for text blocks.</p>
-        </div>
-        <div class="feature">
-          <h4>Single-file</h4>
-          <p>Everything (HTML/CSS/JS) lives in this file for easy download and hosting.</p>
+<section id="about">
+  <h2 class="section-title">About <span style="background:linear-gradient(90deg,var(--accent-start),var(--accent-end));-webkit-background-clip:text;background-clip:text;color:transparent">Me</span></h2>
+  <p class="section-sub">I am a Back End Developer with industry experience building web applications. I specialize in Java and Spring Boot, and I have professional experience working with RESTful APIs, JPA/Hibernate, and SQL Server / MySQL.</p>
+
+  <div class="about-grid">
+    <div>
+      <div class="card info-row">
+        <p style="color:var(--muted)">I focus on reliable server-side architecture and performance tuning. Available for freelance and full-time backend work.</p>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+          <div class="card" style="min-width:180px;flex:1"> 
+            <strong>Backend Expertise</strong>
+            <div style="color:var(--muted);margin-top:8px">Specialized in Java, Spring Boot, and microservices architecture</div>
+          </div>
+          <div class="card" style="min-width:180px;flex:1">
+            <strong>Database Design</strong>
+            <div style="color:var(--muted);margin-top:8px">Proficient in SQL, MySQL, SQL Server, and ORM frameworks</div>
+          </div>
         </div>
       </div>
     </div>
 
     <aside class="card">
-      <h3>Preview Card</h3>
-      <p>Small informational card that mirrors the right-column module from the original site. Replace this with the original content or screenshot if you want an exact match.</p>
-      <div style="height:12px"></div>
-      <div style="display:flex;gap:8px;align-items:center">
-        <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700">A</div>
-        <div>
-          <div style="font-weight:700">Live preview</div>
-          <div style="font-size:13px;color:#64748b">Hosted on Janeway</div>
-        </div>
+      <strong>Contact Information</strong>
+      <div style="margin-top:12px;color:var(--muted)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">✉️ ayush@example.com</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">📞 +91 75099 29860</div>
+        <div style="display:flex;align-items:center;gap:8px">📍 Bengaluru, Karnataka, India</div>
       </div>
     </aside>
-  </section>
-</main>
+  </div>
+</section>
 
-<footer>
-  <div>© Replica — Generated by ChatGPT</div>
-  <div>Made for you — save as <code>index.html</code> and open in browser</div>
-</footer>
+<section id="skills">
+  <h2 class="section-title">Skills & <span style="background:linear-gradient(90deg,var(--accent-start),var(--accent-end));-webkit-background-clip:text;background-clip:text;color:transparent">Tools</span></h2>
+  <p class="section-sub">Languages, frameworks and tools I use regularly</p>
 
-  </div>  <script>
-    // Minimal interactivity: view source opens the HTML content in a new tab
-    document.querySelectorAll('.btn-ghost').forEach(btn=>btn.addEventListener('click',()=>{
-      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
-      const w = window.open();
-      w.document.open();
-      w.document.write(html);
-      w.document.close();
-    }));
+  <div class="skills">
+    <div class="skill">
+      <div class="skill-left">
+        <div class="skill-icon" style="background:linear-gradient(135deg,#ffd28a,#b57cff)">Java</div>
+        <div>
+          <strong>Java</strong>
+          <div style="color:var(--muted);font-size:13px">Advanced</div>
+          <div class="progress"><i style="width:90%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-left">
+        <div class="skill-icon" style="background:linear-gradient(135deg,#22c55e,#10b981)">SB</div>
+        <div>
+          <strong>Spring Boot</strong>
+          <div style="color:var(--muted);font-size:13px">Advanced</div>
+          <div class="progress"><i style="width:88%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-left">
+        <div class="skill-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">API</div>
+        <div>
+          <strong>REST APIs</strong>
+          <div style="color:var(--muted);font-size:13px">Advanced</div>
+          <div class="progress"><i style="width:85%"></i></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="timeline">
+    <div class="card exp-card">
+      <strong>Backend Developer</strong>
+      <div style="color:var(--muted);margin-top:8px">Developed and maintained REST APIs, microservices, and database migrations. Improved performance and reduced latency by optimizing queries and caching.</div>
+    </div>
+
+    <div class="card exp-card">
+      <strong>Junior Backend Developer</strong>
+      <div style="color:var(--muted);margin-top:8px">Worked on feature development, bug fixes, and CI/CD pipelines. Collaborated with frontend and QA teams to deliver releases.</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <h2 class="section-title">Selected Work</h2>
+  <div class="work-grid">
+    <div class="work-item">
+      <strong>E-commerce Platform</strong>
+      <div style="color:var(--muted);margin-top:8px">Built scalable backend services for product catalog and checkout.</div>
+    </div>
+    <div class="work-item">
+      <strong>Visualization Architecture</strong>
+      <div style="color:var(--muted);margin-top:8px">Designed data pipelines and APIs for dashboards.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Let's <span style="background:linear-gradient(90deg,var(--accent-start),var(--accent-end));-webkit-background-clip:text;background-clip:text;color:transparent">Connect</span></h2>
+  <p class="section-sub">Send a message — will respond within 48 hours</p>
+
+  <div class="contact-wrap">
+    <form onsubmit="handleSubmit(event)">
+      <div class="card">
+        <div class="field"><label for="name">Name</label><input id="name" placeholder="Your full name" /></div>
+        <div class="field"><label for="email">Email</label><input id="email" placeholder="your.email@example.com" /></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Tell me about your project or just say hello..."></textarea></div>
+        <div class="send"><button class="btn btn-primary" type="submit">Send Message ✈️</button></div>
+      </div>
+    </form>
+
+    <div style="max-width:520px;width:100%">
+      <h3 style="margin-bottom:8px">Get in Touch</h3>
+      <p style="color:var(--muted)">I'm always interested in hearing about new opportunities and projects.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+        <div style="display:flex;align-items:center;gap:12px"><span>✉️</span><div><strong>Email</strong><div style="color:var(--primary)">ayush@example.com</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span>📞</span><div><strong>Phone</strong><div style="color:var(--primary)">+91 75099 29860</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span>🔗</span><div><strong>LinkedIn</strong><div style="color:var(--primary)">Connect with me</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    © 2024 Ayush Sen. Built with passion and precision.
+  </footer>  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      alert('Message sent (demo).');
+      document.getElementById('name').value='';
+      document.getElementById('email').value='';
+      document.getElementById('message').value='';
+    }
   </script></body>
 </html>
