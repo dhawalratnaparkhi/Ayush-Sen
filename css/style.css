@@ -60,6 +60,12 @@ body {
   top: 0;
   z-index: 100;
 }
+header.site-header,
+main,
+footer.site-footer {
+  position: relative;
+  z-index: 1;
+}
 
 .name {
   font-family: 'Fira Code', monospace;
@@ -158,7 +164,10 @@ body {
   box-shadow: 0 0 25px var(--accent-glow);
   animation: pulse 3s infinite alternate;
 }
-
+.photo-ring {
+  position: relative;
+  z-index: 2;
+}
 .photo-ring img {
   width: 100%;
   height: 100%;
@@ -219,7 +228,7 @@ body {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='none' stroke='%235daeff' stroke-width='0.5'/></svg>");
   opacity: 0.2;
   pointer-events: none;
-  z-index: 0; /* behind content but above body background */
+  z-index: -1; /* always behind */
   animation: moveGrid 60s linear infinite;
 }
 
